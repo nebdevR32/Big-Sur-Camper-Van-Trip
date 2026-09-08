@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#123b3a" />
+    <title>Big Sur Roadbook</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#top"><span class="brand-mark">↝</span><span>Big Sur<br /><em>Roadbook</em></span></a>
+      <nav aria-label="Primary navigation">
+        <a href="#itinerary">Itinerary</a><a href="#route">Route</a><a href="#planning">Plan</a>
+      </nav>
+      <button class="outline-btn" id="printBtn">Print trip</button>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Example trip plan · California coast</p>
+          <h1>Follow the road<br />to the edge of <i>everything.</i></h1>
+          <p class="lede">A five-day camper van escape along Highway 1 — from Monterey’s sea mist to Big Sur’s redwood canyons.</p>
+          <div class="hero-actions"><a class="primary-btn" href="#itinerary">View the plan <span>↓</span></a><button class="text-btn" id="editNote">Add a trip note</button></div>
+        </div>
+        <div class="hero-art" aria-label="Stylized Big Sur coast illustration">
+          <div class="sun"></div><div class="mountain far"></div><div class="mountain near"></div><div class="ocean"></div><div class="road"></div><div class="van"><span></span><b></b><i></i></div>
+          <p class="art-label">PACIFIC COAST HIGHWAY · CA 1</p>
+        </div>
+      </section>
+
+      <section class="overview grid-section" aria-labelledby="overview-title">
+        <div class="section-heading"><p class="eyebrow">At a glance</p><h2 id="overview-title">Your roadbook</h2></div>
+        <div class="stat-grid">
+          <article class="stat-card highlight"><span class="stat-icon">◷</span><p>Departure</p><strong>Oct 14</strong><small id="countdown">—</small></article>
+          <article class="stat-card"><span class="stat-icon">⌁</span><p>Route</p><strong>Monterey →<br />Big Sur</strong><small>Highway 1</small></article>
+          <article class="stat-card"><span class="stat-icon">↝</span><p>Distance</p><strong>212 mi</strong><small>scenic miles</small></article>
+          <article class="stat-card"><span class="stat-icon">◴</span><p>Behind the wheel</p><strong>7h 25m</strong><small>total driving</small></article>
+        </div>
+      </section>
+
+      <section class="weather-budget split-section">
+        <article class="weather-card"><div><p class="eyebrow">Coastal forecast · example</p><h2>Cool mornings,<br />golden afternoons.</h2><p class="muted">Check conditions again before departure — coastal weather shifts quickly.</p></div><div class="forecast"><span class="weather-symbol">☼</span><div><strong>64°</strong><small>High · 51° low</small></div><p>Partly sunny<br /><span>Big Sur, CA</span></p></div></article>
+        <article class="budget-summary"><p class="eyebrow">Budget snapshot</p><div class="budget-total"><h2>$1,180</h2><span>of $1,500 planned</span></div><div class="budget-bar"><i></i></div><div class="budget-meta"><span>79% allocated</span><span>$320 remaining</span></div><a href="#budget" class="inline-link">Open budget <span>→</span></a></article>
+      </section>
+
+      <section id="itinerary" class="itinerary-section">
+        <div class="section-heading row"><div><p class="eyebrow">The journey</p><h2>Day by day</h2></div><span class="pill">5 days · 4 nights</span></div>
+        <div class="itinerary-list" id="itineraryList"></div>
+      </section>
+
+      <section id="route" class="route-section">
+        <div class="section-heading row"><div><p class="eyebrow">The way south</p><h2>Route &amp; stops</h2></div><span class="route-total">212 miles total</span></div>
+        <div class="route-layout"><div class="route-map" aria-label="Illustrative route map"><div class="map-water">Pacific<br />Ocean</div><div class="map-line"></div><div class="map-stop s1"><b></b>Monterey</div><div class="map-stop s2"><b></b>Carmel</div><div class="map-stop s3"><b></b>Pfeiffer<br />Big Sur</div><div class="map-stop s4"><b></b>San Simeon</div><div class="map-stop s5"><b></b>Morro Bay</div><div class="map-compass">N<br /><span>✦</span></div></div><div class="route-legs" id="routeLegs"></div></div>
+      </section>
+
+      <section id="planning" class="planning-grid">
+        <article class="panel packing-panel"><div class="panel-head"><div><p class="eyebrow">Pack smart</p><h2>Packing list</h2></div><div class="circle-progress" id="packingProgress"><span>0%</span></div></div><div id="packingList" class="packing-list"></div></article>
+        <article class="panel reservations-panel"><div class="panel-head"><div><p class="eyebrow">Keep handy</p><h2>Reservations</h2></div><span class="pill warm">3 confirmed</span></div><div id="reservationList" class="reservation-list"></div></article>
+      </section>
+
+      <section id="budget" class="budget-section"><div class="section-heading row"><div><p class="eyebrow">Spend with intention</p><h2>Budget tracker</h2></div><button class="outline-btn small" id="addExpense">+ Add expense</button></div><div class="budget-table" id="budgetTable"></div></section>
+
+      <section class="calendar-section"><div class="section-heading"><p class="eyebrow">October 2026 · example</p><h2>Trip calendar</h2></div><div class="calendar-wrap"><div class="calendar-header"><span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span></div><div class="calendar" id="calendar"></div></div><div class="calendar-key"><span><i class="key-drive"></i>Drive day</span><span><i class="key-stay"></i>Camp night</span><span><i class="key-event"></i>Key event</span></div></section>
+    </main>
+    <footer><span>BIG SUR ROADBOOK</span><p>Example data — personalize every detail before you go.</p><span>CA · 2026</span></footer>
+    <dialog id="noteDialog"><form method="dialog"><button class="dialog-close" value="cancel">×</button><p class="eyebrow">Trip note</p><h2>What are you looking forward to?</h2><textarea id="tripNote" placeholder="A note for this adventure..."></textarea><button class="primary-btn" value="default" id="saveNote">Save note</button></form></dialog>
+    <script src="app.js"></script>
+  </body>
+</html>
